@@ -40,6 +40,35 @@ https://www.w3schools.com/w3css/default.asp
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 //alert("This file last modified " + docMod); // generates alert box with last modified time stamp. un-comment out this entire line if you want to use.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+
+function drawRect() { //This draws a rectangle on the canvas
+	var a_canvas = document.getElementById('a'); //this variable calls the canvas using an id
+	var a_context = a_canvas.getContext('2d'); //sets canvas to 2 dimensional
+	a_context.fillStyle = "#808080"; // rectangle is grey
+	a_context.fillRect(5, 5, 175, 100); //sets coordinates and placement of rectangle
+
+};
+function my_name() {//this function displays my name, "Justin"
+	var a_canvas = document.getElementById('a'); //this variable calls the canvas using an id
+	var a_context = a_canvas.getContext('2d'); //sets canvas to 2 dimensional
+	a_context.font = "30px Times New Roman"; // adds font for my name and size
+	a_context.fillStyle = "#000000"; // sets color of text to black
+	a_context.fillText ("Justin", 10, 150); //adds name text and coordinates for my name
+
+};
+function my_image() {//this function displays my chosen image
+	var a_canvas =document.getElementById('a'); //this variable calls the canvas using an id
+	var a_context = a_canvas.getContext('2d'); //sets canvas to 2 dimensional
+	var spaceimg = document.getElementById('spaceimg');//pulls space image
+	a_context.drawImage(spaceimg, 5, 5, 100, 100);//draws image with size created by 4 numbers
+
+};
+
+function clear_canvas() {//this function clears the canvas
+var a_canvas =document.getElementById('a');//this variable calls the canvas using an id
+a_canvas.width = a_canvas.width; // causes the canvas to clear
+};
+
 </script>
 
 
@@ -57,7 +86,14 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	<p>Content goes here.</p>
 		 	
 </div>
-	
+
+<canvas id="a" width="300" height="190" style="border:2px solid #000000;"></canvas>
+<p>Click the buttons below to create a work of art!</p>
+   <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle!</a>
+   <a onclick="my_name();" class="w3-btn w3-grey w3-round"> Write name!</a>
+   <img id='spaceimg' src='https://www.un.org/sites/un2.un.org/files/gi-space-moon-agreement.jpg' alt='Image of Longhorn' class='hidden' width='0' height='0'>
+   <a onclick="my_image();" class="w3-btn w3-grey w3-round"> Draw image! </a> 
+   <a onclick="clear_canvas();" class="w3-btn w3-grey w3-round"> Clear Canvas!</a>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
